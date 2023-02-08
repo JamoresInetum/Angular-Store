@@ -1,1 +1,17 @@
-<p>product works!</p>
+<!-- Recorre el array products del .ts, interpola cada producto con la propiedad deseada -->
+<mat-card class="card">
+    <mat-card-header>
+        <mat-card-title>{{product.name}}</mat-card-title>
+    </mat-card-header>
+    
+    <mat-card-content>{{product.description}}</mat-card-content>
+    
+    <mat-card-actions>
+        <!-- Boton Compra con Icono Carrito -->
+        <!-- Al hacer click llama al metodo onClick() -->
+        <button mat-flat-button color="primary" (click)="onClick()">
+            Buy {{product.price | currency}}
+            <mat-icon>add_shopping_cart</mat-icon>
+        </button>            
+    </mat-card-actions>
+</mat-card>
