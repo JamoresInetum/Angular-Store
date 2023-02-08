@@ -10,8 +10,12 @@
 <section class="products">
     <!-- Recorre el array products del .ts, interpola cada producto con la propiedad deseada -->
     <mat-card class="card" *ngFor="let product of products">
-        <mat-card-header>{{product.name}}</mat-card-header>
+        <mat-card-header>
+            <mat-card-title>{{product.name}}</mat-card-title>
+        </mat-card-header>
+        
         <mat-card-content>{{product.description}}</mat-card-content>
+        
         <mat-card-actions>
             <!-- Boton Compra con Icono Carrito -->
             <button mat-flat-button color="primary">
