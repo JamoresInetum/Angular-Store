@@ -23,7 +23,4 @@ export class HeaderComponent {
   irAlCheckout():void {
     this.router.navigate(['/checkout']);
   }
-
-  //
-  
 }

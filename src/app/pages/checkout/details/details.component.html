@@ -10,18 +10,19 @@
         </thead>
 
         <tbody>
-            <tr>
-                <td>Name</td>
-                <td>Qty</td>
-                <td>Price</td>
-                <td>SubTotal</td>
+            <tr *ngFor="let item of cart$ | async">
+                <td>{{item.name}}</td>
+                <td>{{item.quantity}}</td>
+                <td>{{item.price | currency}}</td>
+                <td>{{item.quantity * item.price | currency}}</td>
             </tr>
         </tbody>
     </table>
 
     <div class="container__total">
         <p class="total">
-            <strong>Total: <span>988€</span></strong>
+            <!--TODO no se resuelve-->
+            <strong>Total: <span>{{total$ |async|currency}}</span></strong>
         </p>
     </div>
 </div>

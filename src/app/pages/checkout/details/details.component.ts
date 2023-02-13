@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { ShoppingCartService } from 'src/app/shared/services/shoppingCart.service';
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class DetailsComponent {
 
+  total$ = this.shoppingCartService.totalAction$;
+  cart$ = this.shoppingCartService.cartAction$;
+
+  constructor(private shoppingCartService:ShoppingCartService) {
+  
+  }
 }
