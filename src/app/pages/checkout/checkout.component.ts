@@ -17,24 +17,26 @@ export class CheckoutComponent implements OnInit {
     city: ''
   }
 
+  isDelivery: boolean = false;
   stores: Store[] = []
 
-  constructor(private dataService:DataService){}
-  ngOnInit():void{
+  constructor(private dataService: DataService) { }
+  ngOnInit(): void {
     this.getStores();
   }
 
-  onPickUpOrDelivery(value: boolean ): void{
-    console.log(value)
+  onPickUpOrDelivery(value: boolean): void {
+    // console.log(value)
+    this.isDelivery = value;
   }
 
-  onSubmit(){
+  onSubmit() {
     console.log("Guardar")
   }
-  private getStores(){
+  private getStores() {
     this.dataService.getStores()
-    .pipe(
-      tap((stores:Store[])=>this.stores = stores))
+      .pipe(
+        tap((stores: Store[]) => this.stores = stores))
       .subscribe()
   }
 }
