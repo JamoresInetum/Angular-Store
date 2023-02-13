@@ -31,7 +31,7 @@ export class CheckoutComponent implements OnInit {
   onSubmit(){
     console.log("Guardar")
   }
-  getStores(){
+  private getStores(){
     this.dataService.getStores()
     .pipe(
       tap((stores:Store[])=>this.stores = stores))
