@@ -49,5 +49,5 @@
 <app-details></app-details>
 <div class="container_button">
     <!-- Si el formulario no es válido, el botón está deshabilitado-->
-    <button [disabled]="!checkoutForm.form.valid" mat-raised-button color="primary" type="submit" (click)="onSubmit()">Checkout</button>
+    <button [disabled]="!checkoutForm.form.valid" mat-raised-button color="primary" type="submit" (click)="onSubmit(checkoutForm)">Checkout</button>
 </div>
