@@ -65,7 +65,7 @@
       "price": 5,
       "description": "En Hackeando del cerebro de tus compradores, Corti nos revela cómo muchas compañías crean productos digitales o procesos de venta capaces de conectar con la psicología del comprador.",
       "categoryId": 1,
-      "stock": 10
+      "stock": 8
     },
     {
       "id": 3,
@@ -97,7 +97,7 @@
       "price": 7,
       "description": "HDMI A Male to A Male Cable: Supports Ethernet, 3D, 4K video and Audio Return Channel (ARC)",
       "categoryId": 2,
-      "stock": 10
+      "stock": 8
     },
     {
       "id": 7,
@@ -215,6 +215,58 @@
       "date": "15/2/2023",
       "pickup": false,
       "id": 8
+    },
+    {
+      "name": "a",
+      "store": {
+        "id": 1,
+        "name": "Park Row at Beekman St",
+        "address": "38 Park Row",
+        "city": "New York",
+        "openingHours": "10:00 - 14:00 and 17:00 - 20:30"
+      },
+      "date": "15/2/2023",
+      "isDelivery": false,
+      "id": 9
+    },
+    {
+      "name": "a",
+      "store": {
+        "id": 1,
+        "name": "Park Row at Beekman St",
+        "address": "38 Park Row",
+        "city": "New York",
+        "openingHours": "10:00 - 14:00 and 17:00 - 20:30"
+      },
+      "date": "15/2/2023",
+      "isDelivery": false,
+      "id": 10
+    },
+    {
+      "name": "a",
+      "store": {
+        "id": 2,
+        "name": "Store Alcalá",
+        "address": "Calle de Alcalá, 21",
+        "city": "Madrid",
+        "openingHours": "10:00 - 14:00 and 17:00 - 20:30"
+      },
+      "date": "15/2/2023",
+      "isDelivery": false,
+      "id": 11
+    },
+    {
+      "name": "a",
+      "store": {
+        "id": 1,
+        "name": "Park Row at Beekman St",
+        "address": "38 Park Row",
+        "city": "New York",
+        "openingHours": "10:00 - 14:00 and 17:00 - 20:30"
+      },
+      "date": "15/2/2023",
+      "isDelivery": false,
+      "id": 12
     }
   ],
   "detailsOrders": [
@@ -320,6 +372,26 @@
       ],
       "orderId": 8,
       "id": 8
+    },
+    {
+      "details": [],
+      "orderId": 9,
+      "id": 9
+    },
+    {
+      "details": [],
+      "orderId": 10,
+      "id": 10
+    },
+    {
+      "details": [],
+      "orderId": 11,
+      "id": 11
+    },
+    {
+      "details": [],
+      "orderId": 12,
+      "id": 12
     }
   ]
 }

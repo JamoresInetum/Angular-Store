@@ -7,6 +7,7 @@ import { Store } from 'src/app/shared/interfaces/store.interface';
 import { ShoppingCartService } from 'src/app/shared/services/shoppingCart.service';
 import { Product } from '../products/interfaces/product.interface';
 import { DataService } from '../products/services/data.service';
+import { ProductsService } from '../products/services/products.service';
 
 @Component({
   selector: 'app-checkout',
@@ -27,9 +28,10 @@ export class CheckoutComponent implements OnInit {
   stores: Store[] = []
 
   constructor(
-    private dataService: DataService, 
+    private dataService: DataService,
     private shoppingCartService: ShoppingCartService,
-    private router:Router) { }
+    private router: Router,
+    private productsService: ProductsService) { }
 
   ngOnInit(): void {
     this.getStores();
@@ -52,13 +54,13 @@ export class CheckoutComponent implements OnInit {
     this.dataService.saveOrder(data)
       .pipe(
         tap(res => console.log('Order =>', res)),
-        switchMap(({id:orderId}) => {          
+        switchMap(({ id: orderId }) => {
           const details = this.prepareDetails();
           return this.dataService.saveDetailsOrder({ details, orderId });
         }),
         tap(() => this.router.navigate(['/checkout/thank-you'])),
         delay(1000),
-        tap(()=> this.shoppingCartService.resetCart())
+        tap(() => this.shoppingCartService.resetCart())
       )
       .subscribe();
   }
@@ -75,9 +77,14 @@ export class CheckoutComponent implements OnInit {
 
   private prepareDetails(): Details[] {
     const details: Details[] = [];
-    this.cart.forEach((product:Product) => {
-      const {id:productId, name:productName, quantity, stock} = product;
-      details.push({productId,productName, quantity});
+    this.cart.forEach((product: Product) => {
+      const { id: productId, name: productName, quantity, stock } = product;
+      const updateStock = (stock - quantity);
+
+      this.productsService.updateStock(productId, updateStock).pipe(
+        tap(() => details.push({ productId, productName, quantity }))
+      ).subscribe();
+
     })
     return details;
   }
