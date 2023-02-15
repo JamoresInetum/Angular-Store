@@ -56,5 +56,6 @@ export class ShoppingCartService{
         this.cartSubject.next([]);
         this.totalSubject.next(0);
         this.quantitySubject.next(0);
+        this.products = [];
     }
 }

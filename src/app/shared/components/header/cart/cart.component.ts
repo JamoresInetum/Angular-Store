@@ -1,9 +1,9 @@
-import {Component} from "@angular/core";
+import { Component } from "@angular/core";
 import { ShoppingCartService } from '../../../services/shoppingCart.service';
 
 @Component({
 
-    selector:'app-cart',
+    selector: 'app-cart',
     template: `
     <ng-container  *ngIf="{ total: total$ |async, quantity: quantity$ | async} as dataCart">
         <ng-container *ngIf="dataCart.total">
@@ -18,7 +18,6 @@ import { ShoppingCartService } from '../../../services/shoppingCart.service';
 })
 export class CartComponent {
     quantity$ = this.shoppingCartService.quantityAction$;
-  total$ = this.shoppingCartService.totalAction$;
-  cart$ = this.shoppingCartService.cartAction$;
-  constructor(private shoppingCartService:ShoppingCartService){}
+    total$ = this.shoppingCartService.totalAction$;
+    constructor(private shoppingCartService: ShoppingCartService) { }
 }
